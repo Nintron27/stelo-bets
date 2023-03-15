@@ -1,0 +1,7 @@
+/target
+/.git
+.gitignore
+.rustfmt.toml
+.env
+
+fly.toml
