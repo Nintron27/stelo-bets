@@ -66,7 +66,10 @@ async fn post_transaction(
 				2..=100 => memo_uint,
 				_ => return HttpResponse::BadRequest(),
 			},
-			Err(_) => return HttpResponse::BadRequest(),
+			Err(_) => match memo_string.as_str() {
+				"" => 2,
+				_ => return HttpResponse::BadRequest(),
+			},
 		},
 		None => 2,
 	};
